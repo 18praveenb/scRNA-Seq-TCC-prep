@@ -299,6 +299,7 @@ umifiles = [output_dir+f for f in sorted(listdir(output_dir)) if isfile(join(out
 cell_ids = [f[:24] for f in sorted(listdir(output_dir)) if isfile(join(output_dir, f)) and f[-4:]==".umi"]
 
 out_data=''
+print "lendata", "fast:", len(fastqfiles), ":umifiles:", len(umifiles), ":cellids:", len(cell_ids)
 for i in range(len(cell_ids)):
     out_data+=cell_ids[i]+'\t'+umifiles[i]+'\t'+fastqfiles[i]+'\n'
 
